@@ -34,24 +34,36 @@ server.get('/api/v1/favorites', (req, res) => {
 })
 
 // server.post('/api/v1/favorites', (req, res) => {
-//   // const reqParams = ['character', 'setting', 'problem'];
-//   // let error = false;
-//   // reqParams.forEach((param, index) => {
-//   // if ( !req.body[param] && param ) {
-//   //   res.status(422).send('Please send all required data');
-//   //   error = true;
-//   // } else if (index === 2 && !error) {
-//   // const { character, setting, problem } = req.body;
-//   // pool.query(`INSERT INTO favorites(character, setting, problem) VALUES ('${character}', '${setting}', ${problem})`,
-//   // (err, response) => {
-//   //   console.log(err, response)
-//   //   err
-//   //   ? res.status(500).send('Database Error')
-//   //   : res.status(200).send({ character, setting, problem })
-//   // })
-//     console.log(req.body)
-//   }
+  // const reqParams = ['character', 'setting', 'problem'];
+  // let error = false;
+  // reqParams.forEach((param, index) => {
+  // if ( !req.body[param] && param ) {
+  //   res.status(422).send('Please send all required data');
+  //   error = true;
+  // } else if (index === 2 && !error) {
+  // const { character, setting, problem } = req.body;
+  // pool.query(`INSERT INTO favorites(character, setting, problem) VALUES ('${character}', '${setting}', ${problem})`,
+  // (err, response) => {
+  //   console.log(err, response)
+  //   err
+  //   ? res.status(500).send('Database Error')
+  //   : res.status(200).send({ character, setting, problem })
+  // })
+  //   console.log(req.body)
+ // }
 
+
+server.post('/api/v1/favorites', (req, res) => {
+  const { character, setting, problem } = req.body
+
+  pool.query('INSERT INTO favorites(character, setting, problem) VALUES($1, $2, $3)', [character, setting, problem], (error, results) => {
+    if(error) {
+      throw error
+    } else {
+      response.status(201).send('Your favorite has been added')
+    }
+  })
+})
 
 
 server.listen(server.get('port'), () => {
