@@ -27,6 +27,32 @@ server.get('/api/v1/prompts', (req, res) => {
   })
 })
 
+server.get('/api/v1/favorites', (req, res) => {
+  pool.query('SELECT * FROM favorites', (error, response) => {
+    res.status(200).json(response.rows);
+  })
+})
+
+// server.post('/api/v1/favorites', (req, res) => {
+//   // const reqParams = ['character', 'setting', 'problem'];
+//   // let error = false;
+//   // reqParams.forEach((param, index) => {
+//   // if ( !req.body[param] && param ) {
+//   //   res.status(422).send('Please send all required data');
+//   //   error = true;
+//   // } else if (index === 2 && !error) {
+//   // const { character, setting, problem } = req.body;
+//   // pool.query(`INSERT INTO favorites(character, setting, problem) VALUES ('${character}', '${setting}', ${problem})`,
+//   // (err, response) => {
+//   //   console.log(err, response)
+//   //   err
+//   //   ? res.status(500).send('Database Error')
+//   //   : res.status(200).send({ character, setting, problem })
+//   // })
+//     console.log(req.body)
+//   }
+
+
 
 server.listen(server.get('port'), () => {
   console.log(`${server.locals.title} is now listening on ${server.get('port')}`)
