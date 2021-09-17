@@ -5,6 +5,7 @@ const { pool } =require('./config');
 const server = express();
 
 server.use(cors())
+server.use(express.json())
 
 server.set('port', process.env.PORT || 3001);
 server.locals.title = 'Strange prompts'
