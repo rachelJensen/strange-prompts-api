@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { pool } =require('./config');
+const { response } = require('express');
 
 const server = express();
 
@@ -18,11 +19,9 @@ server.get('/', (req, res) => {
 
 server.get('/api/v1/prompts', (req, res) => {
   pool.query('SELECT * FROM prompts', (error, response) => {
-
-    // if (error) {
-    //   console.log(error);
-    //   throw error;
-    // }
+    if (error) {
+      throw error;
+    }
 
     res.status(200).json(response.rows);
   })
@@ -34,35 +33,25 @@ server.get('/api/v1/favorites', (req, res) => {
   })
 })
 
-// server.post('/api/v1/favorites', (req, res) => {
-  // const reqParams = ['character', 'setting', 'problem'];
-  // let error = false;
-  // reqParams.forEach((param, index) => {
-  // if ( !req.body[param] && param ) {
-  //   res.status(422).send('Please send all required data');
-  //   error = true;
-  // } else if (index === 2 && !error) {
-  // const { character, setting, problem } = req.body;
-  // pool.query(`INSERT INTO favorites(character, setting, problem) VALUES ('${character}', '${setting}', ${problem})`,
-  // (err, response) => {
-  //   console.log(err, response)
-  //   err
-  //   ? res.status(500).send('Database Error')
-  //   : res.status(200).send({ character, setting, problem })
-  // })
-  //   console.log(req.body)
- // }
-
-
 server.post('/api/v1/favorites', (req, res) => {
-  const { character, setting, problem } = req.body
+  const { character, setting, problem } = req.body;
 
   pool.query('INSERT INTO favorites(character, setting, problem) VALUES($1, $2, $3)', [character, setting, problem], (error, results) => {
     if(error) {
       throw error
     } else {
-      response.status(201).send('Your favorite has been added')
+      res.status(201).send('Your favorite has been added')
     }
+  })
+})
+
+server.delete('/', (req, res) => {
+  const { id } = req.body;
+  pool.query(`DELETE FROM favorites WHERE id = $1`, [id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    res.status(200).send(`Favorite with ID: ${id} deleted`)
   })
 })
 
