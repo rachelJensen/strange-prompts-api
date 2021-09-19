@@ -1,4 +1,5 @@
-# Strange Prompts API
+# Strange Prompts for a Strange Planet API
+### Sci-fi writing prompts generator
 ### [View The Deployed Database Here](https://strange-prompts-api.herokuapp.com/api/v1/prompts)
 ### [Our Front-End Repo](https://github.com/Andrey-1992/strange-prompts-ui)
 ## Overview
