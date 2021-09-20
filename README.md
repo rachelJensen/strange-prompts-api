@@ -73,6 +73,7 @@ Run ```npm i cors dotenv express pg``` Go to ```config.js``` and comment lines 1
  - PostgreSQL
  - Express
  - Heroku
+ - Postman
  - Javascript
 
 ## Wins
