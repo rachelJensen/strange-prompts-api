@@ -2,9 +2,11 @@
 ### Sci-fi writing prompts generator
 ### [View The Deployed Database Here](https://strange-prompts-api.herokuapp.com/api/v1/prompts)
 ### [Our Front-End Repo](https://github.com/Andrey-1992/strange-prompts-ui)
+
 ## Overview
-The Strange Prompts API allow us to create a database with a table divided in three rows (character, setting and problem) to create random fiction prompts.This app was created as a back end for our stretch-tech Mod 3 FE Turing project. This API was then deployed to Heroku and is constructed using Express to set up the server and PostgreSQL / SQL to create relational databases.
+The goal of this Mod3 group [project](https://frontend.turing.edu/projects/module-3/stretch.html) is to select a new technology to learn independently. The Strange prompts api was an opportunity for us to learn how to create a database and build the API to access it. Our simple server consists of two tables that are divided into three columns (character, setting and problem) to create and store random science fiction prompts. This API was then deployed to Heroku and is constructed using Express to set up the server and PostgreSQL / SQL to create relational databases.
 [Project Rubric](https://frontend.turing.edu/projects/module-3/stretch.html)
+
 ## Set Up
 ```szh 
 git clone git@github.com:rachelJensen/strange-prompts-api.git
@@ -73,12 +75,21 @@ Run ```npm i cors dotenv express pg``` Go to ```config.js``` and comment lines 1
  - Heroku
  - Javascript
 
+## Wins
+- We were able to add the DELETE functionality (*extension from MVP).
+- We were able to recongonize when what we had started wasn't working and pivot to alternative solutions. 
+- We gained a glimpse of a "Full Stack" application.  
+
+##Challenges
+- Finding helpful resources within the level of learning that we were at.
+- Learning and implementing a working application in 10 days.
+
 ## Future Extensions
-- [ ] Refine and add data to have more prompt ideas 
+- Refine and add data to have more prompt ideas 
 
 ## Authors
 
-- [@Samantha Brown](https://github.com/Samantha-Brown)  
-- [@Rachel Jensen](https://github.com/rachelJensen)
-- [@Andrey Bermudez](https://github.com/Andrey-1992)
+- [Samantha Brown](https://github.com/Samantha-Brown)  
+- [Rachel Jensen](https://github.com/rachelJensen)
+- [Andrey Bermudez](https://github.com/Andrey-1992)
 
