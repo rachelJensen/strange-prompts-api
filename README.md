@@ -71,9 +71,9 @@ Run ```npm i cors dotenv express pg``` Go to ```config.js``` and comment lines 1
 ## Tools & Technologies
 <p text-align="center"> 
     <img alt="JavaScript Badge" src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" />
+    <img src="https://img.shields.io/badge/Express-000?logo=express&logoColor=fff&style=flat-square" alt="Express Badge">
     <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=fff&style=flat-square" />
     <img alt="Postman" src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=fff&style=flat-square" />
-    <img alt="Postman" src=" https://initialcommit.com/img/initialcommit/beginners-guide-to-using-express-js-and-node-js-framework.png" />
 </p>
 
 ## Wins
