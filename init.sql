@@ -6,7 +6,7 @@ CREATE TABLE prompts(
 );
 
 INSERT INTO prompts(character, setting, problem)
-   VALUES('a dishwasher', 'at a space port with an always open diner', 'whose brother is missing');
+   VALUES('A dishwasher', 'at a space port with an always open diner', 'whose brother is missing');
   
 
 INSERT INTO prompts(character, setting, problem)
