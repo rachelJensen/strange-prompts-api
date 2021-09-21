@@ -78,7 +78,7 @@ Run ```npm i cors dotenv express pg``` Go to ```config.js``` and comment lines 1
 
 ## Wins
 - We were able to add the DELETE functionality (extension from MVP).
-- We were able to recongonize when what we had started wasn't working and pivot to alternative solutions. 
+- We were able to recognize when what we had started wasn't working and pivot to alternative solutions. 
 - We gained a glimpse of a "Full Stack" application.  
 
 ## Challenges
